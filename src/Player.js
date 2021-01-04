@@ -438,7 +438,7 @@ class Player extends EventEmitter {
         if (!queue) return this.emit('error', 'NotPlaying', message)
         // Update volume
         queue.volume = percent
-        queue.voiceConnection.dispatcher.setVolumeLogarithmic(queue.calculatedVolume / 200)
+        queue.voiceConnection.dispatcher.setVolumeLogarithmic(queue.calculatedVolume / 50)
     }
 
     /**
@@ -695,7 +695,7 @@ class Player extends EventEmitter {
                 if (seekTime) {
                     queue.additionalStreamTime = seekTime
                 }
-                queue.voiceConnection.dispatcher.setVolumeLogarithmic(queue.calculatedVolume / 200)
+                queue.voiceConnection.dispatcher.setVolumeLogarithmic(queue.calculatedVolume / 150)
                 // When the track starts
                 queue.voiceConnection.dispatcher.on('start', () => {
                     resolve()
